@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+        <style>
+          body {
+            font-family: sans-serif;
+            color: #474747;
+          }
+
+          th,
+          td {
+            border: 1px solid lightgray;
+          }
+
+          a {
+            text-decoration: none;
+            color: #005673;
+          }
+
+          a:hover {
+            background-color: lightgray;
+          }
+          ul{
+
+          }
+          li{
+            display: inline-block;
+            padding: 1%;
+            border: 2px solid lightgray;
+            border-radius: 5px;
+          }
+          li:hover{
+            background-color: lightgray;
+          }
+        </style>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><%= link_to 'Strona główna', root_path %></li>
+      <li><%= link_to 'Forum', posts_path %></li>
+      <li><%= link_to 'Formularz kontaktowy', new_form_path %></li>
+    </ul>
+
+  </nav>
+  <%= yield %>
+
+</body>
+
+</html>

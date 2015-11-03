@@ -1,0 +1,28 @@
+<h1>Wszystkie posty z naszego bloga</h1>
+
+<table>
+  <tr>
+    <th>Autor</th>
+    <th>Tytuł</th>
+    <th>Treść</th>
+    <th colspan="3"></th>
+  </tr>
+
+  <% @posts.each do |post| %>
+  <tr>
+    <td><%= post.author %></td>
+    <td><%= post.title %></td>
+    <td><%= post.text %></td>
+    <td><%= link_to 'Zobacz', post_path(post.id) %></td>
+    <td><%= link_to 'Edytuj', edit_post_path(post.id) %></td>
+    <td><%= link_to 'Usuń', post_path(post),
+              method: :delete,
+              data: { confirm: 'Czy na pewno?' } %></td>
+  </tr>
+</tr>
+<% end %>
+</table>
+
+<hr>
+<%= link_to 'Nowy Post', new_post_path %><br>
+<%= link_to 'Wróć do strony głownej bloga', root_path %>
