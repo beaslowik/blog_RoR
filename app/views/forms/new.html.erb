@@ -18,7 +18,7 @@
 </p>
 
 <p>
-<%= f.label :text, "Treść wpisu" %><br>
+<%= f.label :text, "Treść wiadomości" %><br>
 <%= f.text_area :text %>
 </p>
 
@@ -26,6 +26,6 @@
   <%= f.submit "Wyślij" %>
 </p>
 <hr>
-<%= link_to 'Wróć do strony głównej bloga', root_path %>
+<%= link_to 'Wróć do listy wiadomości', forms_path %>
 
 <% end %>

@@ -1,0 +1,27 @@
+<h1>Lista wiadomości od użytkowników</h1>
+
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Treść</th>
+    <th colspan="3"></th>
+  </tr>
+
+  <% @forms.each do |form| %>
+  <tr>
+    <td><%= form.email %></td>
+    <td><%= form.text %></td>
+
+    <td><%= link_to 'Zobacz', form_path(form.id) %></td>
+    <td><%= link_to 'Edytuj', edit_form_path(form.id) %></td>
+    <td><%= link_to 'Usuń', form_path(form),
+              method: :delete,
+              data: { confirm: 'Czy na pewno?' } %></td>
+
+  </tr>
+</tr>
+<% end %>
+</table>
+
+<hr>
+<%= link_to 'Dodaj nową wiadomość', new_form_path %><br>

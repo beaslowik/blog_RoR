@@ -1,4 +1,11 @@
-<h3>Twoja wadomość została zapisana!</h3>
-<hr>
+<p>
+  <strong>Email:</strong>
+  <%= @form.email %>
+</p>
 
-<%= link_to 'Wróć do strony głównej bloga', root_path %>
+<p>
+  <strong>Treść:</strong>
+  <%= @form.text %>
+</p>
+<hr>
+<%= link_to 'Wróć do listy wiadomości', posts_path %><br>
